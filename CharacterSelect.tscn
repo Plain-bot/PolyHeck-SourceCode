@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Images/CharacterSelect.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/shooterbotportrait.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Bunnyportrait.png" type="Texture" id=5]
+[ext_resource path="res://ChooseSH.gd" type="Script" id=6]
+[ext_resource path="res://Bunnyportrait.gd" type="Script" id=7]
+[ext_resource path="res://BUTmultiplayer.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="cs" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Heading" type="Label" parent="."]
+margin_left = 1.53752
+margin_top = 75.2925
+margin_right = 1051.54
+margin_bottom = 125.292
+custom_fonts/font = SubResource( 1 )
+text = "Choose your character"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ID1DESC" type="Label" parent="."]
+margin_left = 43.8072
+margin_top = 528.458
+margin_right = 388.807
+margin_bottom = 681.458
+custom_fonts/font = SubResource( 2 )
+text = "Shooter-bot:
+- Canon
+- slow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ID2DESC" type="Label" parent="."]
+margin_left = 728.811
+margin_top = 545.216
+margin_right = 1096.81
+margin_bottom = 698.216
+custom_fonts/font = SubResource( 2 )
+text = "Bunny:
+- Sword
+- fast"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 94.8126
+margin_top = 225.709
+margin_right = 285.813
+margin_bottom = 521.709
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 813.388
+margin_top = 233.063
+margin_right = 1021.39
+margin_bottom = 529.063
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shootportrait" type="TextureButton" parent="."]
+margin_left = 92.5155
+margin_top = 224.384
+margin_right = 290.516
+margin_bottom = 523.384
+texture_normal = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bunnyportrait" type="TextureButton" parent="."]
+margin_left = 816.932
+margin_top = 231.738
+margin_right = 1014.93
+margin_bottom = 530.738
+texture_normal = ExtResource( 5 )
+expand = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="multiplayer" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -177.0
+margin_top = -46.0
+margin_right = 177.0
+margin_bottom = -13.0
+custom_fonts/font = SubResource( 3 )
+text = "Multiplayer (LOCAL)"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Shootportrait" to="Shootportrait" method="_on_Shootportrait_pressed"]
+[connection signal="pressed" from="Bunnyportrait" to="Bunnyportrait" method="_on_Bunnyportrait_pressed"]
+[connection signal="pressed" from="multiplayer" to="multiplayer" method="_on_multiplayer_pressed"]

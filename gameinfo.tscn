@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -13.0
+margin_right = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 15.1884
+margin_top = 200.607
+margin_right = 429.188
+margin_bottom = 246.607
+custom_fonts/font = SubResource( 1 )
+text = "Game Info"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="versiob" type="Label" parent="."]
+margin_left = 8.51416
+margin_top = 286.036
+margin_right = 320.514
+margin_bottom = 326.036
+custom_fonts/font = SubResource( 2 )
+text = "Version: 1.7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="form" type="Label" parent="."]
+margin_left = 9.18384
+margin_top = 355.448
+margin_right = 423.184
+margin_bottom = 391.448
+custom_fonts/font = SubResource( 3 )
+text = "Game Form: Digital"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="engine" type="Label" parent="."]
+margin_left = 9.18384
+margin_top = 418.185
+margin_right = 331.184
+margin_bottom = 454.185
+custom_fonts/font = SubResource( 3 )
+text = "Engine: Godot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="engine2" type="Label" parent="."]
+margin_left = 9.18384
+margin_top = 480.185
+margin_right = 1274.18
+margin_bottom = 555.185
+custom_fonts/font = SubResource( 3 )
+text = "cheats: N = Master Control. shift + = = increases life,
+shift + ctrl + ` = debug"
+__meta__ = {
+"_edit_use_anchors_": false
+}

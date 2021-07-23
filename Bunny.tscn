@@ -1,0 +1,129 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/Images/Bunny/player2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Bunny/player2walk2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Bunny/player2swingnew.png" type="Texture" id=3]
+[ext_resource path="res://Bunny.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Images/Bunny/player2walk1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Bunny/sword.png" type="Texture" id=6]
+[ext_resource path="res://Sword.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Images/death.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Assets/Sounds/Swing.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/SoundTrack/NightogNights.wav" type="AudioStream" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 50.6135, 260.213 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 288.994, 30.9265 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Hit"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 9 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 72.7812
+height = 0.0
+
+[node name="Player2" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -28.5087, -83.7445 )
+shape = SubResource( 2 )
+
+[node name="Sword" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Sword"]
+position = Vector2( 207.568, -115.464 )
+rotation = 4.71239
+scale = Vector2( 0.305883, 0.429659 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+position = Vector2( 60.5809, -114.926 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sword"]
+anims/Hit = SubResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -245.888
+margin_top = -449.905
+margin_right = 186.112
+margin_bottom = -422.905
+custom_fonts/font = SubResource( 5 )
+text = "Master Control Activated"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( -32.0723, -129.18 )
+shape = SubResource( 6 )
+
+[node name="sword" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="night" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )

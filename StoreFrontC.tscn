@@ -1,0 +1,170 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Images/StageArt/FrontBuildingbackground.png" type="Texture" id=1]
+[ext_resource path="res://Player1B.tscn" type="PackedScene" id=2]
+[ext_resource path="res://StoreFront.gd" type="Script" id=6]
+[ext_resource path="res://Spawn.tscn" type="PackedScene" id=7]
+[ext_resource path="res://timer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/SoundTrack/StoreFront2.wav" type="AudioStream" id=9]
+[ext_resource path="res://BunnyB.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 657.149, 13.3272 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 668.273, 11.6677 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 107.144, 14.8529 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 71.5417, 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 172.0
+margin_right = 1278.0
+margin_bottom = 721.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 639.179, 297 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="Player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 257.709, 593.33 )
+scale = Vector2( 0.44, 0.4 )
+
+[node name="Player2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1056.31, 602.319 )
+scale = Vector2( 0.44, 0.4 )
+
+[node name="Border1" type="KinematicBody2D" parent="."]
+rotation = 3.13025
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border1"]
+position = Vector2( 12.946, -435.222 )
+rotation = -1.55975
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Border2" type="KinematicBody2D" parent="."]
+rotation = 3.13025
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border2"]
+position = Vector2( -1303.14, -455.156 )
+rotation = -1.55975
+scale = Vector2( 1, -1.68006 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Border3" type="KinematicBody2D" parent="."]
+rotation = 3.13025
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border3"]
+position = Vector2( -636.948, -802.815 )
+rotation = 0.00219388
+scale = Vector2( 1, -1.68006 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Spawn" parent="." instance=ExtResource( 7 )]
+position = Vector2( -156.801, 506.423 )
+rotation = 3.13025
+
+[node name="SpawnArea" type="ReferenceRect" parent="."]
+margin_left = -247.524
+margin_top = 282.049
+margin_right = -16.5243
+margin_bottom = 648.049
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="SpawnPosition" type="Node" parent="."]
+
+[node name="Position2D" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( -50.323, 500.036 )
+
+[node name="Position2D2" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( -48.112, 594.203 )
+
+[node name="Position2D3" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( -187.803, 749.768 )
+
+[node name="Position2D4" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1383.72, 645 )
+
+[node name="Position2D5" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1480.55, 432.288 )
+
+[node name="Position2D6" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1362.38, 529.468 )
+
+[node name="Position2D7" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 994.81, 881.523 )
+
+[node name="Position2D8" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 337.626, 859.299 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1288.0
+margin_bottom = 170.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shelf" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf"]
+position = Vector2( 1044.2, 424.925 )
+shape = SubResource( 3 )
+
+[node name="platform" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2( 85.8499, 398.994 )
+shape = SubResource( 4 )
+
+[node name="Area2D2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1049.35, 72.1248 )
+scale = Vector2( 0.6, 0.52 )
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

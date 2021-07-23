@@ -1,0 +1,185 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Images/CharacterSelect.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/StageArt/FrontBuildingbackground.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://FrontStore.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/Ding.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Images/StageArt/Bossstage.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/StageArt/Laboratory.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/StageArt/UnYahzimStage.png" type="Texture" id=9]
+[ext_resource path="res://selectLab.gd" type="Script" id=10]
+[ext_resource path="res://selectUnyahzim.gd" type="Script" id=11]
+[ext_resource path="res://selectGrasa.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="shstage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrontStore" type="TextureButton" parent="."]
+margin_left = 30.0664
+margin_top = 323.003
+margin_right = 206.066
+margin_bottom = 438.003
+texture_normal = ExtResource( 2 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FrontStore"]
+margin_left = 7.0
+margin_top = 128.0
+margin_right = 172.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Store Front
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FrontStore"]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="FrontStore"]
+wait_time = 0.5
+
+[node name="Lab" type="TextureButton" parent="."]
+margin_left = 376.549
+margin_top = 328.66
+margin_right = 552.548
+margin_bottom = 443.66
+texture_normal = ExtResource( 8 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Lab"]
+margin_left = 7.0
+margin_top = 128.0
+margin_right = 172.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Laboratory"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Lab"]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Lab"]
+wait_time = 0.5
+
+[node name="Unyahzim" type="TextureButton" parent="."]
+margin_left = 795.156
+margin_top = 323.003
+margin_right = 971.155
+margin_bottom = 438.003
+texture_normal = ExtResource( 9 )
+expand = true
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Unyahzim"]
+margin_left = 7.0
+margin_top = 128.0
+margin_right = 172.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Unyahzim"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Unyahzim"]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Unyahzim"]
+wait_time = 0.5
+
+[node name="Grasa" type="TextureButton" parent="."]
+margin_left = 1083.66
+margin_top = 324.417
+margin_right = 1259.65
+margin_bottom = 439.417
+texture_normal = ExtResource( 7 )
+expand = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Grasa"]
+margin_left = -17.0415
+margin_top = 129.414
+margin_right = 192.958
+margin_bottom = 176.414
+custom_fonts/font = SubResource( 1 )
+text = "Grasa (\"boss\")"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Grasa"]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="Grasa"]
+wait_time = 0.5
+
+[node name="Label" type="Label" parent="."]
+margin_left = 4.24268
+margin_top = 39.941
+margin_right = 874.243
+margin_bottom = 69.941
+custom_fonts/font = SubResource( 2 )
+text = "Character Chosen: Shooter-Bot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 4.41421
+margin_top = 193.25
+margin_right = 874.414
+margin_bottom = 223.25
+custom_fonts/font = SubResource( 2 )
+text = "Stage Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="FrontStore" to="FrontStore" method="_on_FrontStore_pressed"]
+[connection signal="timeout" from="FrontStore/Timer" to="FrontStore" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Lab" to="Lab" method="_on_Lab_pressed"]
+[connection signal="timeout" from="Lab/Timer" to="Lab" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Unyahzim" to="Unyahzim" method="_on_Unyahzim_pressed"]
+[connection signal="timeout" from="Unyahzim/Timer" to="Unyahzim" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Grasa" to="Grasa" method="_on_Grasa_pressed"]
+[connection signal="timeout" from="Grasa/Timer" to="Grasa" method="_on_Timer_timeout"]

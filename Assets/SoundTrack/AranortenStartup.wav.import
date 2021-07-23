@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AranortenStartup.wav-1e0530f532ffb52fed70aa0f0e9602be.sample"
+
+[deps]
+
+source_file="res://Assets/SoundTrack/AranortenStartup.wav"
+dest_files=[ "res://.import/AranortenStartup.wav-1e0530f532ffb52fed70aa0f0e9602be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

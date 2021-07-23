@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Images/GameOverScreen.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Menu.gd" type="Script" id=4]
+[ext_resource path="res://Assets/SoundTrack/GameOver2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Gameoverscore.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_color = Color( 0.211765, 0.0352941, 0.0352941, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -270.0
+margin_right = 270.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.239216, 0, 0, 1 )
+text = "Game Over"
+
+[node name="Menu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -71.7573
+margin_top = 326.683
+margin_right = 80.2427
+margin_bottom = 385.683
+custom_fonts/font = SubResource( 2 )
+text = "Menu"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="save" type="Button" parent="."]
+margin_left = 490.732
+margin_top = 405.879
+margin_right = 792.732
+margin_bottom = 455.879
+custom_fonts/font = SubResource( 3 )
+text = "Save Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu" to="Menu" method="_on_Menu_pressed"]
+[connection signal="pressed" from="save" to="." method="_on_save_pressed"]

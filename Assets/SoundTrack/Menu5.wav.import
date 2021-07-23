@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Menu5.wav-a4d415b972d66f418a50d5b15a6b42e7.sample"
+
+[deps]
+
+source_file="res://Assets/SoundTrack/Menu5.wav"
+dest_files=[ "res://.import/Menu5.wav-a4d415b972d66f418a50d5b15a6b42e7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

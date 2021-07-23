@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 34
+outline_size = 4
+outline_color = Color( 0.0509804, 0.152941, 0.0823529, 1 )
+font_data = ExtResource( 3 )
+
+[node name="HUD" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Display" type="CanvasLayer" parent="."]
+
+[node name="SCORE" type="Label" parent="Display"]
+margin_top = 34.7058
+margin_right = 328.0
+margin_bottom = 96.7058
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.290196, 0.329412, 0.729412, 1 )
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HEALTH" type="Label" parent="Display"]
+margin_left = 5.33932
+margin_top = 108.122
+margin_right = 333.339
+margin_bottom = 170.122
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.6, 0.0117647, 0.0117647, 1 )
+text = "Lives: 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="info" type="Label" parent="Display"]
+margin_left = 12.2704
+margin_top = 10.3826
+margin_right = 386.27
+margin_bottom = 44.3826
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.603922, 0.713726, 0.364706, 1 )
+text = "Player Info"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Display"]
+wait_time = 4096.0
+[connection signal="timeout" from="Display/Timer" to="." method="_on_Timer_timeout"]

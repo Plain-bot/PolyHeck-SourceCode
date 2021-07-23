@@ -1,0 +1,6 @@
+This folder is for those who for some reason care about MIDI or wanna modify it. :) Some songs dont have
+MIDI either because I forgot (whoops) or because I feel like its easy to replicate. Or because I flat
+out don't like them.
+
+- Plain/Paullec
+5/19/2021

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PolyHeck_StoreFront.wav-7d1cb9f9063da40ebda1b5269eb71089.sample"
+
+[deps]
+
+source_file="res://Assets/SoundTrack/PolyHeck_StoreFront.wav"
+dest_files=[ "res://.import/PolyHeck_StoreFront.wav-7d1cb9f9063da40ebda1b5269eb71089.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

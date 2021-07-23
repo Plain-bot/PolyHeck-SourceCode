@@ -1,0 +1,221 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Bunny.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Images/StageArt/UnYahzimStage.png" type="Texture" id=2]
+[ext_resource path="res://Spawn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://StoreFront.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Images/red.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Images/white.png" type="Texture" id=7]
+[ext_resource path="res://Assets/SoundTrack/unyahzim2.wav" type="AudioStream" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 446.548, 13.2003 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 397.122, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 715.434, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 680.465, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 111.121, 22.1588 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 100.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 62.0988, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 40.8057, 10 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 55
+outline_size = 4
+font_data = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="background" type="TextureRect" parent="."]
+margin_top = -1.0
+margin_right = 1284.0
+margin_bottom = 724.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+rotation = 3.13605
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 22.4602, -328.112 )
+rotation = -1.56548
+shape = SubResource( 1 )
+one_way_collision = true
+one_way_collision_margin = 0.0
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 636.102, 575.521 )
+scale = Vector2( 0.44, 0.4 )
+
+[node name="Border2" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border2"]
+position = Vector2( 1301.11, 334.587 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 0.0
+
+[node name="border3" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
+position = Vector2( 629.278, 729.799 )
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="border4" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border4"]
+position = Vector2( 616.597, 132.433 )
+rotation = 3.14159
+shape = SubResource( 4 )
+one_way_collision = true
+
+[node name="border5" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border5"]
+position = Vector2( 618.88, 164.186 )
+shape = SubResource( 5 )
+
+[node name="flashig" type="AnimatedSprite" parent="."]
+position = Vector2( 623.01, 113.742 )
+scale = Vector2( 0.0575454, 0.186004 )
+frames = SubResource( 6 )
+playing = true
+
+[node name="Spawn" parent="." instance=ExtResource( 3 )]
+position = Vector2( -104.76, 460.278 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.9
+autostart = true
+
+[node name="SpawnPosition" type="Node" parent="."]
+
+[node name="Position2D" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( -118.068, 581.937 )
+
+[node name="Position2D2" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 293.72, 589.006 )
+
+[node name="Position2D3" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1334.31, 467.707 )
+
+[node name="Position2D4" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1339.16, 545.458 )
+
+[node name="Position2D5" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1180.87, 578.304 )
+
+[node name="Position2D6" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 1178.49, 411.815 )
+
+[node name="Position2D7" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 998.919, 363.057 )
+
+[node name="Position2D8" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 794.375, 643.71 )
+
+[node name="Position2D10" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 977.169, 839.988 )
+
+[node name="Position2D11" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 334.395, 781.554 )
+
+[node name="Position2D12" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 764.409, 766.571 )
+
+[node name="Position2D9" type="Position2D" parent="SpawnPosition" groups=[
+"Spawn",
+]]
+position = Vector2( 807.457, 511.708 )
+
+[node name="platform" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2( 618.85, 244.749 )
+shape = SubResource( 7 )
+
+[node name="platform2" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2( 451.996, 180.245 )
+rotation = 0.64173
+shape = SubResource( 8 )
+
+[node name="rip" type="Label" parent="."]
+margin_left = 897.012
+margin_top = 65.4071
+margin_right = 1203.01
+margin_bottom = 92.4071
+custom_fonts/font = SubResource( 9 )
+text = "No timer sorry :)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="difficulty" type="Label" parent="."]
+margin_left = 540.885
+margin_top = 111.986
+margin_right = 860.885
+margin_bottom = 160.986
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Diff: Hard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

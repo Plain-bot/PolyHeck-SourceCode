@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/leadrboardtheme.wav-5db816c35f911e25e7309f6ddfc57504.sample"
+
+[deps]
+
+source_file="res://Assets/SoundTrack/leadrboardtheme.wav"
+dest_files=[ "res://.import/leadrboardtheme.wav-5db816c35f911e25e7309f6ddfc57504.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

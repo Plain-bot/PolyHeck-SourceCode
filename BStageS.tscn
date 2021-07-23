@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Images/CharacterSelect.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/StageArt/FrontBuildingbackground.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://BFrontStore.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/Ding.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Images/StageArt/Hexablanka.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/StageArt/space.png" type="Texture" id=8]
+[ext_resource path="res://Bspace.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FrontStore" type="TextureButton" parent="."]
+margin_left = 41.3801
+margin_top = 109.457
+margin_right = 217.38
+margin_bottom = 224.457
+texture_normal = ExtResource( 2 )
+expand = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FrontStore"]
+margin_left = 7.0
+margin_top = 128.0
+margin_right = 172.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Store Front
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FrontStore"]
+stream = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="FrontStore"]
+wait_time = 0.5
+
+[node name="space" type="TextureButton" parent="."]
+margin_left = 38.7104
+margin_top = 423.144
+margin_right = 214.71
+margin_bottom = 538.144
+texture_normal = ExtResource( 8 )
+expand = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="space"]
+margin_left = 7.0
+margin_top = 128.0
+margin_right = 172.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Space..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="space"]
+stream = ExtResource( 6 )
+
+[node name="Hexablanka" type="TextureButton" parent="."]
+margin_left = 903.686
+margin_top = 425.814
+margin_right = 1079.69
+margin_bottom = 540.814
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Hexablanka"]
+margin_left = 7.0
+margin_top = 128.0
+margin_right = 172.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 1 )
+text = "Hexablanka"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Hexablanka"]
+stream = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 6.0
+margin_right = 870.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 2 )
+text = "Character Chosen: Bunny"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 49.0
+margin_right = 873.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 2 )
+text = "Stage Sellect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="psa" type="Label" parent="."]
+margin_left = 201.0
+margin_top = 322.0
+margin_right = 1071.0
+margin_bottom = 385.0
+custom_fonts/font = SubResource( 2 )
+text = "Following are test stages.
+Will be removed in final game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="FrontStore" to="FrontStore" method="_on_FrontStore_pressed"]
+[connection signal="timeout" from="FrontStore/Timer" to="FrontStore" method="_on_Timer_timeout"]
+[connection signal="pressed" from="space" to="space" method="_on_space_pressed"]
